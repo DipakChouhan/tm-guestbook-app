@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="row header-manu">
+        <header class="col-xl-12 col-md-12 col-sm-12 header-manu-fixed">
+            <nav class="row">
+                <div class="col-md-6 col-sm-6 col-10 border-bottom">
+                    <div class="row top-left-nev">
+                        <div class="col-md-2 col-sm-2 col-4 remove-pad-marg logo-icon">
+                            <div class="row">
+                                <a type="button" data-toggle="modal" data-target="#profileModalCenter">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="image-icon" alt="Brand Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-10 col-sm-10 col-8">
+                            <div class="row">
+                                <a class="nav-link nav-link-padd" routerLink="/about">
+                                    <span class="name-size">Hemant Rao</span>
+                                    <span class="list-2">Front End Developer</span>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-2 header-right border-bottom">
+                    <!-- <a class="nav-link rem1" href="../assets/Hemant-Rao.pdf" download="Hemant-Rao">
+                        <span class="titleName">Resume Download </span>
+                        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                    </a> -->
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="row set-positon">
+        <div class="col-lg-12">
+            <div class="row set-both">
+                <div class="col-lg-2 col-2 fixed-nav show-menu remove-pad-marg">
+                    <div class="row set-abslt remove-pad-marg">
+                        <div class="col-lg-12 remove-pad-marg">
+                            <div class="row remove-pad-marg">
+                                <nav class="col-lg-12 nav-hor remove-pad-marg">
+                                    <ul class="navbar-nav col remove-pad-marg">
+                                        <li class="nav-item" routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{exact:true}">
+                                            <a class="nav-link" routerLink="addEntry">
+                                                <span class="set-icon">
+                                                    <!-- <i class="fa fa-user-o"
+                                                    aria-hidden="true"></i> -->
+                                                    <!-- <i class="fa fa-address-card-o" aria-hidden="true"></i> -->
+                                                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+
+                                                </span><span class="titleName">Add Entry</span></a>
+                                        </li>
+                                        <li class="nav-item" routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{exact:true}">
+                                            <a class="nav-link" routerLink="listAllGuestEntries">
+                                                <span class="set-icon">
+                                                    <!-- <i class="fa fa-user-o"
+                                                    aria-hidden="true"></i> -->
+                                                    <!-- <i class="fa fa-address-card-o" aria-hidden="true"></i> -->
+                                                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+
+                                                </span><span class="titleName">List All Entries</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-10 dashboard">
+                    <div class="row dashboard-cont">
+                        <div class="col-lg-12 remove-pad-marg">
+                            <div class="set-rout-ele">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

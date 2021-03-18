@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="form-cont">
+                    <div class="form-wrap">
+                        <article class="card">
+                            <div class="card-body p-5">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="nav-tab-card">
+                                        <div class="logo">
+                                            <img src="./rzz9Z.png" alt="">
+                                        </div>
+                                        <form class="form-horizontal" role="form" (ngSubmit)="onSignIn()" [formGroup]="signInForm">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" formControlName="email" id="email" name="email">
+                                                <div  *ngIf="signInForm.controls['email'].invalid
+                                                  && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)">
+                                                  <div *ngIf="signInForm.controls['email'].errors.required">
+                                                    <i class="text-danger">Email is required.</i>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" class="form-control" name="password" formControlName="password" id="password">
+                                                <div  *ngIf="signInForm.controls['password'].invalid
+                                                  && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)">
+                                                    <div *ngIf="signInForm.controls['password'].errors.required">
+                                                      <i class="text-danger">Password is required.</i>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- form-group.// -->
+                                            <button class="subscribe btn btn-primary btn-block" type="submit" [disabled]="this.signInForm.invalid">
+                                              Login
+                                          </button>
+                                          <div class="text-center">
+                                            Need an account? 
+                                            <a
+                                            href="#"
+                                            routerLink="/register"
+                                            data-toggle="tooltip"
+                                            title="Register"
+                                            class="text-primary mt-3"
+                                        >
+                                            Register
+                                        </a>
+                                          </div>
+                                            
+                                            <!-- <div *ngIf="cardFormVal.invalid" class="alert alert-danger">{{errorMessage}}</div> -->
+                                        </form>
+                                    </div>
+                                </div> <!-- tab-content .// -->
+                            </div> <!-- card-body.// -->
+                        </article> <!-- card.// -->
+                    </div> <!-- row.// -->
+                </div>
+                <!--container end.//-->
+            </div>
+        </div>
+    </div>
+  </div>

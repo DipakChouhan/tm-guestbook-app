@@ -1,0 +1,83 @@
+<div class="conatiner-fluid title-style">
+  <div class="row remove-pad-marg">
+    <div class="">
+      <h2>Create New Entry</h2>
+    </div>
+  </div>
+</div>
+<div class="ml-5 mt-5 mr-5">
+  <label for="entry">Select Type Of Entry: </label>
+  <select class="form-control form-control-sm" id="entry" (change)="onChange($event)">
+    <option>Text Entry</option>
+    <option>Image Entry</option>
+  </select>
+  <br>
+  <span *ngIf="displayMsg" class="badge badge-success">Entry created successfully!</span>
+</div>
+<fieldset class="m-5" *ngIf="!isImageEntry">
+  <form
+    [formGroup]="guestEntryForm"
+    (ngSubmit)="onEntryTextCreate()"
+    class="w-100"
+    disabled="true"
+  >
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <label for="guestBookEntryText">Guest Entry Text</label>
+        <textarea
+          class="form-control"
+          formControlName="guestBookEntryText"
+          id="guestBookEntryText"
+          rows="6"
+        ></textarea>
+        <div
+          *ngIf="
+            guestEntryForm.controls['guestBookEntryText'].invalid &&
+            (guestEntryForm.controls['guestBookEntryText'].dirty ||
+              guestEntryForm.controls['guestBookEntryText'].touched)
+          "
+        >
+          <div
+            *ngIf="
+              guestEntryForm.controls['guestBookEntryText'].errors.required
+            "
+          >
+            <i class="text-danger">Entry text is required.</i>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
+        <button
+          type="submit"
+          class="btn btn-sm btn-primary w-100"
+          [disabled]="this.guestEntryForm.invalid"
+        >
+          Create Entry
+          <!-- <span class="material-icons text-success">check_circle</span> -->
+        </button>
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+<fieldset class="m-5" *ngIf="isImageEntry">
+  <form [formGroup]="guestEntryImageForm" (ngSubmit)="onEntryImageFormSubmit()" class="w-100">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <input type="file" formControlName="file" id="file" (change) = onFileChanged($event)>
+      </div>
+      <div class="col-6 col-sm-6 col-md-12 col-lg-12 mt-3">
+        <button type="submit" class="btn btn-sm btn-primary w-100" [disabled]="selectedFile == null">
+          Create Entry
+          <!-- <span class="material-icons text-success">check_circle</span> -->
+        </button>
+      </div>
+      <div class="col-6 col-sm-6 col-md-12 col-lg-12">
+        <button type="reset" class="btn btn-sm btn-secondary w-100" (click)="clearImageSelection()">
+          Clear Selection
+          <!-- <span class="material-icons text-danger">cancel</span> -->
+        </button>
+      </div>
+    </div>
+  </form>
+</fieldset>

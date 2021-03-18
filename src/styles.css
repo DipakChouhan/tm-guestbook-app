@@ -1,0 +1,226 @@
+/* You can add global styles to this file, and also import other style files */
+
+.font-c,
+html,
+body {
+  font-family: Barlow;
+}
+.font-h,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Raleway;
+  color: #237dac;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #333;
+}
+p {
+  font-size: 1.5rem;
+}
+a {
+  color: #333;
+}
+
+.float-right {
+  text-align: right;
+}
+.remove-pad-marg {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.remove-pad-top {
+  padding-top: 0px !important;
+}
+.remove-pad-bot {
+  padding-bottom: 0px !important;
+}
+.remove-pad-right {
+  padding-right: 0px !important;
+}
+.remove-pad-left {
+  padding-left: 0px !important;
+}
+
+.remove-marg-top {
+  margin-top: 0px !important;
+}
+.remove-marg-bot {
+  margin-bottom: 0px !important;
+}
+.remove-marg-right {
+  margin-right: 0px !important;
+}
+.remove-marg-left {
+  margin-left: 0px !important;
+}
+
+.title-style {
+  padding: 15px 15px;
+  background-color: #0099cc;
+  border-bottom: 1px solid #e5ecec;
+  color: #fff !important;
+  margin-bottom: 10px;
+}
+.title-style h2 {
+  color: #fff !important;
+  margin-bottom: 0px !important;
+}
+.title-style .remove-pad-marg h2 {
+  margin-bottom: 0px !important;
+  font-size: 1.6rem;
+}
+.nav-link.nav-link-padd {
+  padding: 1rem 0px;
+}
+.logo-icon {
+  width: 75px;
+  max-width: 75px;
+  margin: 0px auto;
+  margin-right: 0;
+  position: relative;
+}
+h4 a:hover {
+  color: #0099cc;
+}
+
+@media only screen and (max-width: 768px) {
+  .skill-board blockquote h3 {
+    font-size: 1.3rem;
+  }
+  .italic {
+    font-size: 0.9rem;
+  }
+  .italic sup {
+    font-size: 0.7rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.99rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .exp-list li {
+    font-size: 0.95rem;
+  }
+  .skill-board blockquote h3 {
+    font-size: 1.2rem !important;
+  }
+  .italic {
+    font-size: 1.1rem !important;
+  }
+  .headline h3 {
+    font-size: 1.1rem !important;
+  }
+  blockquote h3 a {
+    font-size: 1rem !important;
+  }
+  blockquote h3 span a {
+    font-size: 0.8rem !important;
+  }
+  .title-style .remove-pad-marg h2 {
+    font-size: 1.3rem !important;
+  }
+}
+
+::selection {
+  color: #fff;
+  background-color: #6f6c6c;
+}
+.skill-board-white {
+  background-color: #ffffff;
+  border-radius: 2px;
+  padding: 18px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+.cont-style {
+  min-height: calc(100vh - 10px);
+}
+.margin-bottom {
+  margin-bottom: 25px !important;
+}
+.cont-style-parent {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.cont-style-cont {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0px;
+  overflow-y: scroll;
+  padding: 0px 15px;
+  padding-top: 0px;
+  padding-bottom: 165px;
+}
+
+/* hide scroll bar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+/* snow effect css start here */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    bottom,
+    rgb(105, 173, 212) 0%,
+    rgb(23, 82, 145) 84%
+  );
+  background-image: -o-linear-gradient(
+    bottom,
+    rgb(105, 173, 212) 0%,
+    rgb(23, 82, 145) 84%
+  );
+  background-image: -moz-linear-gradient(
+    bottom,
+    rgb(105, 173, 212) 0%,
+    rgb(23, 82, 145) 84%
+  );
+  background-image: -webkit-linear-gradient(
+    bottom,
+    rgb(105, 173, 212) 0%,
+    rgb(23, 82, 145) 84%
+  );
+  background-image: -ms-linear-gradient(
+    bottom,
+    rgb(105, 173, 212) 0%,
+    rgb(23, 82, 145) 84%
+  );
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top, color-stop(0, rgb(105, 173, 212)),
+    color-stop(0.84, rgb(23, 82, 145))
+  );
+  background: transparent;
+  pointer-events: none;
+}
+
+/* snow effect css end here */
+.modal-backdrop.fade.show {
+  display: none;
+}
+.modal-open .modal{
+  background-color: #96969663 !important;
+}

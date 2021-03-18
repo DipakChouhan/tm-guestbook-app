@@ -1,0 +1,103 @@
+<div class="modal fade" id="entryFormModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header text-dark">
+        <button type="button" class="close" #closeModal data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <!--      <div class="col-12 col-sm-12 col-md-12 col-lg-12">-->
+      <!--        <app-message></app-message>-->
+      <!--      </div>-->
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row" id="createTodoForm">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <fieldset
+              [disabled]="mode == 'view'"
+              *ngIf="!entry.guestBookEntryImage"
+            >
+              <form
+                [formGroup]="guestEntryForm"
+                (ngSubmit)="onEntryUpdate(closeModal)"
+                class="w-100"
+                disabled="true"
+              >
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <input
+                      type="text"
+                      class="form-control form-control"
+                      formControlName="guestBookEntryId"
+                      id="guestBookEntryId"
+                      style="display: none"
+                    />
+                    <textarea
+                      class="form-control"
+                      formControlName="guestBookEntryText"
+                      id="guestBookEntryText"
+                      rows="6"
+                    ></textarea>
+                    <div
+                      *ngIf="
+                        guestEntryForm.controls['guestBookEntryText'].invalid &&
+                        (guestEntryForm.controls['guestBookEntryText'].dirty ||
+                          guestEntryForm.controls['guestBookEntryText'].touched)
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          guestEntryForm.controls['guestBookEntryText'].errors
+                            .required
+                        "
+                      >
+                        <i class="text-danger">Entry text is required.</i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
+                    <button
+                      type="submit"
+                      class="btn btn btn-primary w-100"
+                      [disabled]="this.guestEntryForm.invalid"
+                    >
+                      Update Entry
+                      <!-- <span class="material-icons text-success">check_circle</span> -->
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </fieldset>
+            <div *ngIf="entry.guestBookEntryImage">
+              <img style="width: 100%;"
+                [src]="'data:image/jpeg;base64,' + entry.guestBookEntryImage"
+                *ngIf="mode=='view'"
+              />
+              <fieldset *ngIf="mode=='edit'">
+                <form [formGroup]="guestEntryImageForm" (ngSubmit)="onEntryImageFormSubmit(closeModal)" class="w-100">
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <input type="file" formControlName="file" id="file" (change) = onFileChanged($event)>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-12 col-lg-12 mt-3">
+                      <button type="submit" class="btn btn btn-primary w-100" [disabled]="selectedFile == null">
+                        Update Entry
+                        <!-- <span class="material-icons text-success">check_circle</span> -->
+                      </button>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-12 col-lg-12">
+                      <button type="reset" class="btn btn btn-secondary w-100" (click)="clearImageSelection()">
+                        Clear
+                        <!-- <span class="material-icons text-danger">cancel</span> -->
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

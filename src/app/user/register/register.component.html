@@ -1,0 +1,175 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="form-cont">
+          <div class="form-wrap">
+            <article class="card">
+              <div class="card-body p-5">
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="nav-tab-card">
+                    <div class="logo">
+                      <img src="./rzz9Z.png" alt="" />
+                    </div>
+                    <span *ngIf="displayMsg" class="badge badge-success">Successfully Registered! Please login to continue.</span>
+                    <fieldset>
+                      <form
+                        [formGroup]="signUpForm"
+                        (ngSubmit)="onSignUp()"
+                        class="w-100"
+                      >
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <!-- <app-message></app-message> -->
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Name</label>
+                            <input
+                              type="text"
+                              formControlName="name"
+                              class="form-control"
+                              id="name"
+                              name="name"
+                            />
+                            <div
+                              *ngIf="
+                                signUpForm.controls['name'].invalid &&
+                                (signUpForm.controls['name'].dirty ||
+                                  signUpForm.controls['name'].touched)
+                              "
+                            >
+                              <div
+                                *ngIf="
+                                  signUpForm.controls['name'].errors.required
+                                "
+                              >
+                                <i class="text-danger">Name is required.</i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Email</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              formControlName="email"
+                              id="email"
+                              name="email"
+                            />
+                            <div
+                              *ngIf="
+                                signUpForm.controls['email'].invalid &&
+                                (signUpForm.controls['email'].dirty ||
+                                  signUpForm.controls['email'].touched)
+                              "
+                            >
+                              <div
+                                *ngIf="
+                                  signUpForm.controls['email'].errors.required
+                                "
+                              >
+                                <i class="text-danger">Email is required.</i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Username</label>
+                            <input
+                              type="text"
+                              formControlName="username"
+                              class="form-control"
+                              id="username"
+                              name="username"
+                            />
+                            <div
+                              *ngIf="
+                                signUpForm.controls['username'].invalid &&
+                                (signUpForm.controls['username'].dirty ||
+                                  signUpForm.controls['username'].touched)
+                              "
+                            >
+                              <div
+                                *ngIf="
+                                  signUpForm.controls['username'].errors
+                                    .required
+                                "
+                              >
+                                <i class="text-danger">Username is required.</i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              formControlName="password"
+                              id="password"
+                              name="password"
+                            />
+                            <div
+                              *ngIf="
+                                signUpForm.controls['password'].invalid &&
+                                (signUpForm.controls['password'].dirty ||
+                                  signUpForm.controls['password'].touched)
+                              "
+                            >
+                              <div
+                                *ngIf="
+                                  signUpForm.controls['password'].errors
+                                    .required
+                                "
+                              >
+                                <i class="text-danger">Password is required.</i>
+                              </div>
+                              <div
+                                *ngIf="
+                                  signUpForm.controls['password'].errors
+                                    .minlength
+                                "
+                              >
+                                <i class="text-danger"
+                                  >Password must be greater than 6 characters</i
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3 text-center">
+                            <button
+                              type="submit"
+                              class="btn btn btn-primary w-100"
+                              [disabled]="this.signUpForm.invalid"
+                            >
+                              Register
+                              <!-- <span class="material-icons text-success">check_circle</span> -->
+                            </button>
+                            Already have a account? 
+                            <a
+                            href="#"
+                            routerLink="/login"
+                            data-toggle="tooltip"
+                            title="Login"
+                            class="text-primary mt-3"
+                          >
+                            Login
+                          </a>
+                          </div>
+                          
+                        </div>
+                      </form>
+                    </fieldset>
+                  </div>
+                </div>
+                <!-- tab-content .// -->
+              </div>
+              <!-- card-body.// -->
+            </article>
+            <!-- card.// -->
+          </div>
+          <!-- row.// -->
+        </div>
+        <!--container end.//-->
+      </div>
+    </div>
+  </div>
+</div>
