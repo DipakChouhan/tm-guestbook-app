@@ -1,28 +1,24 @@
 # GuestbookUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+This is angular based project that works as a frontend for out Guest Book Application.
+Below are few activities performed in this application using UI:
+1. New user can be created using register endpoint.
+2. User can add either a text or a image entry in guest book.
+3. User can view, edit and delete his entry.
+4. Admin can view all the guest book entries.
+5. Admin can approve, edit, delete a particular entry.
 
-## Development server
+## Pre requisite
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Node.js
+2. Angular 10
 
-## Code scaffolding
+## Steps to build and run
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the project to local machine using command `git clone https://github.com/DipakChouhan/tm-guestbook-app.git`.
+2. Run `npm install` to install the dependencies.
+3. User `ng serve` to start the server on port 4200. Use `http://localhost:4200` to access the application. 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-"# tm-guestbook-app-UI" 
+## Creating admin user
+1. First create a regular user using registraion page.
+2. Update the ROLE of the user in database to `ADMIN` using command `update user set role = 'ADMIN' where user_email = <user_email>`.
