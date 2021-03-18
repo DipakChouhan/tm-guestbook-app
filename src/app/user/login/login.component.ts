@@ -12,6 +12,8 @@ import { UserService } from 'src/app/user.service';
 export class LoginComponent implements OnInit {
 
   public signInForm: FormGroup;
+  displayMsg = false;
+  errorMessage: string;
 
   constructor(private userService: UserService, private router: Router,
     private route: ActivatedRoute, private dataService: DataService) { }
@@ -45,13 +47,11 @@ export class LoginComponent implements OnInit {
           } else {
             this.router.navigate(['/admin']);
           }
-          
-
-        // this.dataService.buildModelDataObject(null, null, this, null, error.error.errorMessages);
         }
       );
     }, error => {
-      this.dataService.buildModelDataObject(null, null, this, null, error.error.errorMessages);
+      this.displayMsg = true;
+      this.errorMessage = "Login Failed! Please check your credentials"
     });
   }
 

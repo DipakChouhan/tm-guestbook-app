@@ -11,6 +11,7 @@
                                         <div class="logo">
                                             <p>Guest book Sign in</p>
                                         </div>
+                                        <span *ngIf="displayMsg" class="badge badge-danger">{{errorMessage}}</span>
                                         <form class="form-horizontal" role="form" (ngSubmit)="onSignIn()" [formGroup]="signInForm">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
