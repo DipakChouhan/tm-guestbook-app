@@ -18,8 +18,8 @@ export class ListAllEntriesComponent implements OnInit {
   }
 
   getGuestBookentryList() {
+    this.guesBookEntires = [];
     this.adminService.getGuestEntryList().subscribe(response => {
-      this.guesBookEntires = [];
       this.guesBookEntires = response["payloads"];
     });
   }

@@ -14,7 +14,7 @@
             <div class="row">
               <div class="skill-board-white">
                 <div class="col-lg-12">
-                  <div class="card-columns">
+                  <div class="card-columns" *ngIf="guesBookEntires.length > 0">
                     <div
                       class="card edit-btn"
                       *ngFor="let entry of guesBookEntires"
@@ -73,6 +73,9 @@
                         {{ entry.guestBookEntryText| uppercase }}
                       </div>
                     </div>
+                  </div>
+                  <div *ngIf="guesBookEntires.length == 0">
+                    <h4>No Records Found!</h4>
                   </div>
                 </div>
               </div>
