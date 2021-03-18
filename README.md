@@ -20,5 +20,5 @@ Below are few activities performed in this application using UI:
 3. User `ng serve` to start the server on port 4200. Use `http://localhost:4200` to access the application. 
 
 ## Creating admin user
-1. First create a regular user using registraion page.
+1. First create a regular user using registration page.
 2. Update the ROLE of the user in database to `ADMIN` using command `update user set role = 'ADMIN' where user_email = <user_email>`.
